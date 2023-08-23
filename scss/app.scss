@@ -1,0 +1,134 @@
+@use "_mixins.scss" as *;
+@use "_reset.scss";
+
+@font-face {
+    font-family: "Avenir";
+    src: url(/assets/fonts/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+    font-family: "Avenir-Black";
+    src: url(/assets/fonts/AvenirLTStd-Black.otf);
+}
+
+body {
+    font-weight: 400;
+    color: silver;
+    background-color: #040714;
+}
+
+.header {
+    @include flex(row, nowrap, space-between, center);
+    position: fixed;
+    width: 100%;
+    background-color: slategray;
+    &__ul {
+        @include flex(row, nowrap, center, center);
+        gap: 0.5em;
+        padding: 0.8em 1em 0.7em 1em;
+        background-color: rgb(215, 125, 8);
+    }
+    &__btn {
+        white-space: nowrap;
+        border: 1px solid red;
+        border-radius: 5px;
+        padding: 0.7em 0.8em;
+    }
+    &__img {
+        margin-left: 2em;
+    }
+}
+
+.landing {
+    @include flex(row, nowrap, center, center);
+    min-height: 52.6vw;
+    background-image: url(/assets/landing.jpg);
+    background-size: cover;
+    background-position: top;
+    &__texto {
+        @include flex(column, nowrap, start, center);
+        position: relative;
+        top: 8.3vw;
+        width: 65%;
+        text-align: center;
+    }
+    &__h1 {
+        font-family: "Avenir-Black";
+        font-size: 2.7em;
+        margin-bottom: 0.6em;
+        line-height: 3.5vw;
+    }
+    &__h4 {
+        font-size: 1.5em;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.75vw;
+    }
+    &__btn {
+        font-size: 1.15em;
+        white-space: nowrap;
+        border-radius: 4px;
+        padding: 1em 6em;
+        letter-spacing: 0.5px;
+        margin-bottom: 2vw;
+        color: #f9f9f9;
+        background-color: #0063e5;
+    }
+    &__p {
+        font-size: 1.2em;
+        line-height: 1.875vw;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.1em;
+        color: inherit;
+    }
+    &__span {
+        font-size: 0.77em;
+        line-height: 1.2vw;
+        color: inherit;
+    }
+}
+
+.hero1 {
+    @include flex(column, nowrap, center, start);
+    min-height: 48vw;
+    background-image: url(/assets/hero1.jpg);
+    background-size: cover;
+    background-position: top;
+    &__texto {
+        min-height: 21.5vw;
+        width: 37vw;
+        padding-left: 5vw;
+    }
+    &__h1 {
+        font-family: "Avenir-Black";
+        font-size: 2.65em;
+        letter-spacing: 0.5px;
+        margin-bottom: 3.1vw;
+    }
+    &__p {
+        font-size: 1.2em;
+        letter-spacing: 0.5px;
+        line-height: 2vw;
+        color: inherit;
+    }
+}
+
+.hero2 {
+    @include flex(column, nowrap, center, center);
+    min-height: 48vw;
+    padding: 5.375vw;
+    padding-top: 6.6vw;
+    text-align: center;
+    &__h1 {
+        font-family: "Avenir-Black";
+        font-size: 2.65em;
+        letter-spacing: 0.5px;
+        margin-bottom: 3.4vw;
+    }
+    &__p {
+        font-size: 1.2em;
+        margin-bottom: 1.4vw;
+        color: inherit;
+    }
+    &__img {
+    }
+}
