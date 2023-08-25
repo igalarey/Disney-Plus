@@ -115,6 +115,17 @@ body {
   line-height: 1.4em;
 }
 
+@keyframes rebote {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-7px);
+  }
+  60% {
+    transform: translateY(-3.5px);
+  }
+}
 @font-face {
   font-family: "Avenir";
   src: url(/assets/fonts/AvenirLTStd-Roman.otf);
@@ -136,7 +147,19 @@ body {
   align-items: center;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  background-color: transparent;
+}
+.header--sticky {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
   background-color: #040714;
 }
 .header__ul {
@@ -154,9 +177,10 @@ body {
   cursor: pointer;
   letter-spacing: 0.5px;
   border-radius: 4px;
-  transition: all 0.2s ease 0s;
+  transition: all 0.2s ease;
   border: 1px solid silver;
   color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .header__btn:hover {
   color: #040714;
@@ -169,7 +193,7 @@ body {
   cursor: pointer;
   letter-spacing: 0.5px;
   border-radius: 4px;
-  transition: all 0.2s ease 0s;
+  transition: all 0.2s ease;
   color: #f9f9f9;
   background-color: #0063e5;
 }
@@ -183,7 +207,7 @@ body {
 
 .landing {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   min-height: 108vh;
@@ -221,12 +245,17 @@ body {
   letter-spacing: 0.5px;
   margin-bottom: 2vw;
   cursor: pointer;
-  transition: all 0.2s ease 0s;
+  transition: all 0.2s ease;
   color: #f9f9f9;
   background-color: #0063e5;
 }
 .landing__btn:hover {
   background-color: #006eff;
+}
+.landing__btn--bajar {
+  position: relative;
+  top: 11vw;
+  animation: rebote 1.75s infinite;
 }
 .landing__p {
   font-size: 1.2em;
@@ -239,6 +268,9 @@ body {
   font-size: 0.77em;
   line-height: 1.2vw;
   color: inherit;
+}
+.landing__img {
+  width: 1.3vw;
 }
 
 .hero1 {
@@ -383,7 +415,7 @@ body {
 }
 .footer__select {
   font-size: 0.75em;
-  padding: 0.3vw 0.8vw;
+  padding: 0.3vw 0.4vw;
   color: inherit;
 }
 .footer__select:hover {

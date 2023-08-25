@@ -8,17 +8,27 @@
         <title>Disney+ | Películas, series y Originales exclusivos</title>
     </head>
     <body>
-        <div class="header">
-            <img src="/assets/logo.svg" alt="" class="header__img" />
-            <ul class="header__ul">
-                <li class="header__li">
-                    <button class="header__btn--sub">SUSCRÍBETE YA</button>
-                </li>
-                <li class="header__li">
-                    <button class="header__btn">INICIAR SESIÓN</button>
-                </li>
-            </ul>
-        </div>
+        <header>
+            <nav class="header" id="header">
+                <img src="" alt="" class="header__img" />
+                <ul class="header__ul">
+                    <li class="header__li">
+                        <button class="header__btn">INICIAR SESIÓN</button>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="header--sticky" id="headerSticky">
+                <img src="/assets/logo.svg" alt="" class="header__img" />
+                <ul class="header__ul">
+                    <li class="header__li">
+                        <button class="header__btn--sub">SUSCRÍBETE YA</button>
+                    </li>
+                    <li class="header__li">
+                        <button class="header__btn">INICIAR SESIÓN</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         <main>
             <section class="landing">
                 <div class="landing__texto">
@@ -28,7 +38,7 @@
                     </h1>
                     <h4 class="landing__h4">Cancela cuando quieras.*</h4>
                     <button class="landing__btn">SUSCRÍBETE YA</button>
-                    <p class="landing__p">
+                    <p class="landing__p" id="trigger">
                         Consigue 12 meses por el precio de 10 con una
                         suscripción anual. Ahorro aplicable a suscripciones
                         anuales en comparación con el precio de 12 meses a
@@ -41,6 +51,13 @@
                         tener una suscripción.</span
                     >
                 </div>
+                <button class="landing__btn--bajar">
+                    <img
+                        src="assets/dropdown.svg"
+                        alt=""
+                        class="landing__img"
+                    />
+                </button>
             </section>
             <section class="hero1">
                 <div class="hero1__texto">
@@ -409,5 +426,6 @@
                 derechos.
             </p>
         </footer>
+        <script src="js/app.js"></script>
     </body>
 </html>

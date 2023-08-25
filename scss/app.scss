@@ -1,6 +1,22 @@
 @use "_mixins.scss" as *;
 @use "_reset.scss";
 
+@keyframes rebote {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-7px);
+    }
+    60% {
+        transform: translateY(-3.5px);
+    }
+}
+
 @font-face {
     font-family: "Avenir";
     src: url(/assets/fonts/AvenirLTStd-Roman.otf);
@@ -21,8 +37,17 @@ body {
     @include flex(row, nowrap, space-between, center);
     position: fixed;
     width: 100%;
-    z-index: 1;
-    background-color: #040714;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    background-color: transparent;
+    &--sticky {
+        @include flex(row, nowrap, space-between, center);
+        position: fixed;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        background-color: #040714;
+    }
     &__ul {
         @include flex(row, nowrap, center, center);
         gap: 0.65vw;
@@ -35,9 +60,10 @@ body {
         cursor: pointer;
         letter-spacing: 0.5px;
         border-radius: 4px;
-        transition: all 0.2s ease 0s;
+        transition: all 0.2s ease;
         border: 1px solid silver;
         color: #f9f9f9;
+        background-color: rgb(0, 0, 0, 0.8);
         &:hover {
             color: #040714;
             background-color: #f9f9f9;
@@ -49,7 +75,7 @@ body {
             cursor: pointer;
             letter-spacing: 0.5px;
             border-radius: 4px;
-            transition: all 0.2s ease 0s;
+            transition: all 0.2s ease;
             color: #f9f9f9;
             background-color: #0063e5;
             &:hover {
@@ -64,7 +90,7 @@ body {
 }
 
 .landing {
-    @include flex(row, nowrap, center, center);
+    @include flex(column, nowrap, center, center);
     min-height: 108vh;
     background-image: url(/assets/landing.jpg);
     background-size: 100%;
@@ -96,11 +122,16 @@ body {
         letter-spacing: 0.5px;
         margin-bottom: 2vw;
         cursor: pointer;
-        transition: all 0.2s ease 0s;
+        transition: all 0.2s ease;
         color: #f9f9f9;
         background-color: #0063e5;
         &:hover {
             background-color: #006eff;
+        }
+        &--bajar {
+            position: relative;
+            top: 11vw;
+            animation: rebote 1.75s infinite;
         }
     }
     &__p {
@@ -114,6 +145,9 @@ body {
         font-size: 0.77em;
         line-height: 1.2vw;
         color: inherit;
+    }
+    &__img {
+        width: 1.3vw;
     }
 }
 
@@ -240,7 +274,7 @@ body {
     }
     &__select {
         font-size: 0.75em;
-        padding: 0.3vw 0.8vw;
+        padding: 0.3vw 0.4vw;
         color: inherit;
         &:hover {
             text-decoration: underline;
