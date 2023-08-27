@@ -349,8 +349,56 @@ body {
 }
 
 .faq {
-  padding: 5.6vw;
-  background-color: rgb(64, 64, 63);
+  padding: 8.9vw 5.6vw 5.6vw;
+}
+.faq__h2 {
+  text-align: center;
+  font-family: "Avenir-Black";
+  font-size: 2.4em;
+  margin-bottom: 3vw;
+}
+.faq__pregunta {
+  margin-top: 1vw;
+}
+.faq__btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1vw 1.3vw;
+  width: 100%;
+  background-color: #13151d;
+}
+.faq__span {
+  font-size: 1.2em;
+}
+.faq__span--desplegable {
+  font-size: 2.5em;
+}
+.faq__descripcion {
+  padding: 0 1.3vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height, 0.25s ease-in-out;
+  background-color: #13151d;
+}
+.faq__p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: inherit;
+}
+.faq__li {
+  list-style-type: inherit;
+  margin: 1vw 2.5vw;
+}
+.faq__a {
+  text-decoration: underline;
+}
+
+.abierto {
+  padding: 0 1.3vw 1.3vw;
+  max-height: 1400px;
 }
 
 .hero3 {

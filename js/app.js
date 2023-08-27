@@ -26,3 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", animacionHeader);
     animacionHeader();
 });
+
+const botones = document.querySelectorAll(".faq__btn");
+
+botones.forEach((boton) => {
+    boton.addEventListener("click", function () {
+        const target = boton.getAttribute("data-target");
+        const descripcion = document.getElementById(target);
+        const spanDesplegable = boton.querySelector(".faq__span--desplegable");
+
+        if (descripcion.classList.contains("abierto")) {
+            descripcion.classList.remove("abierto");
+            spanDesplegable.textContent = "+";
+        } else {
+            descripcion.classList.add("abierto");
+            spanDesplegable.textContent = "-";
+        }
+    });
+});
