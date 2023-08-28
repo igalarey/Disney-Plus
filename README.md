@@ -1,7 +1,7 @@
 
 # Disney+
 
-![Captura](https://imgur.com/a/ESCCRmj)
+![Captura](https://i.imgur.com/UdMTacD.png)
 
 
 ## 📋 Descripción
