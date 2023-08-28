@@ -174,6 +174,9 @@ body {
         line-height: 2vw;
         color: inherit;
     }
+    &__img {
+        display: none;
+    }
 }
 
 .hero2 {
@@ -296,7 +299,7 @@ body {
 .footer {
     @include flex(column, nowrap, start, center);
     margin: 3.2vw 16.5vw 0;
-    padding: 1.7vw 0.5vw 2.6vw;
+    padding: 1.7vw 6vw 2.6vw;
     &__img {
         width: 5vw;
         margin-bottom: 0.9vw;
@@ -342,4 +345,299 @@ body {
 
 option {
     color: black;
+}
+
+@include device(laptop) {
+    .header {
+        &__btn {
+            font-size: 1em;
+            padding: 1vw 1.15vw;
+            &--sub {
+                font-size: 1em;
+                padding: 1.15vw 1.05vw;
+            }
+        }
+        &__img {
+            width: 8vw;
+            margin-left: 6vw;
+        }
+    }
+    .landing {
+        min-height: 70vh;
+        &__h1 {
+            font-size: 1.7em;
+        }
+        &__h4 {
+            font-size: 1.2em;
+        }
+        &__btn {
+            font-size: 1em;
+            &--bajar {
+                top: 15vw;
+            }
+        }
+        &__p {
+            font-size: 1em;
+            line-height: 28px;
+        }
+        &__span {
+            line-height: 18px;
+        }
+    }
+    .hero1 {
+        @include flex(column, nowrap, start, start);
+        &__texto {
+            position: relative;
+            top: 9vw;
+            width: 45vw;
+        }
+        &__h1 {
+            font-size: 1.8em;
+        }
+        &__p {
+            font-size: 1em;
+            line-height: 28px;
+        }
+    }
+    .hero2 {
+        padding-top: 11vw;
+        &__h1 {
+            font-size: 1.8em;
+        }
+    }
+    .columna {
+        &__h3 {
+            font-size: 1.5em;
+            line-height: 35px;
+        }
+        &__p {
+            font-size: 1em;
+            line-height: 28px;
+        }
+    }
+    .faq {
+        padding: 20vw 5.6vw 5.6vw;
+        &__h2 {
+            font-size: 1.7em;
+        }
+        &__span {
+            font-size: 1em;
+        }
+        &__p {
+            font-size: 1em;
+        }
+    }
+    .hero3 {
+        padding: 15vw 5.6vw 5.6vw;
+        &__h2 {
+            font-size: 1.7em;
+        }
+        &__h3 {
+            font-size: 1.5em;
+        }
+        &__p {
+            font-size: 0.9em;
+            line-height: 28px;
+        }
+    }
+    .footer {
+        margin: 3.2vw 10.5vw 0;
+        padding: 10vw 0vw 2.6vw;
+        &__img {
+            width: 8vw;
+        }
+    }
+}
+
+@include device(tablet) {
+    .header {
+        &__ul {
+            padding: 2vw 2.7vw;
+        }
+    }
+    .landing {
+        min-height: 90vh;
+        background-position: 50%;
+        background-size: cover;
+        background-image: url(/assets/landingMovil.jpg);
+        &__h1 {
+            font-size: 1.7em;
+        }
+        &__h4 {
+            font-size: 1.2em;
+        }
+        &__btn {
+            font-size: 1em;
+            &--bajar {
+                top: 25vw;
+            }
+        }
+        &__p {
+            font-size: 1em;
+            line-height: 28px;
+        }
+        &__span {
+            line-height: 18px;
+        }
+    }
+    .hero1 {
+        @include flex(column, nowrap, start, center);
+        background-image: none;
+        &__texto {
+            top: 0;
+            padding: 0;
+            text-align: center;
+            width: 90vw;
+        }
+        &__img {
+            display: inherit;
+        }
+    }
+    .hero2 {
+        padding-top: 25vw;
+        &__p {
+            margin-bottom: 10vw;
+        }
+    }
+    .columna {
+        @include flex(column, nowrap, start, center);
+        margin-top: 12vw;
+        &__img {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 2vw;
+        }
+        &__p {
+            margin-bottom: 2vw;
+        }
+    }
+    .hero3 {
+        &__ul {
+            @include flex(row, wrap, center, start);
+        }
+        &__img {
+            width: 340px;
+        }
+    }
+    .footer {
+        min-height: 37vw;
+        margin: 0 7.5vw 0;
+        padding: 10vw 0vw 2.6vw;
+        &__img {
+            width: 8vw;
+        }
+    }
+}
+@include device(movil) {
+    .header {
+        &__ul {
+            gap: 2.7vw;
+        }
+        &__btn {
+            padding: 2.7vw 2.5vw;
+            font-size: 0.8em;
+            &--sub {
+                padding: 2.7vw 2.5vw;
+                font-size: 0.8em;
+            }
+        }
+        &__img {
+            width: 15vw;
+        }
+    }
+    .landing {
+        min-height: 70vh;
+        background-position: 50%;
+        background-size: cover;
+        background-image: url(/assets/landingMovil.jpg);
+        &__texto {
+            width: 89%;
+        }
+        &__h1 {
+            font-size: 1.5em;
+            line-height: 36px;
+        }
+        &__h4 {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        &__btn {
+            &--bajar {
+                display: none;
+            }
+        }
+        &__p {
+            font-size: 0.95em;
+            margin-top: 20px;
+            line-height: 28px;
+        }
+    }
+    .hero1 {
+        &__p {
+            margin: 8vw 0 10vw;
+        }
+    }
+    .hero2 {
+        &__p {
+            margin: 8vw 0 15vw;
+            font-size: 1em;
+        }
+    }
+    .columna {
+        &__img {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 2vw;
+        }
+        &__p {
+            margin-bottom: 5vw;
+        }
+    }
+    .faq {
+        &__pregunta {
+            margin-top: 3vw;
+        }
+        &__btn {
+            padding: 3vw 4vw;
+        }
+        &__span {
+            font-size: 1em;
+        }
+        &__descripcion {
+            padding: 0 5vw;
+        }
+    }
+    .abierto {
+        padding-bottom: 3vw;
+    }
+    .hero3 {
+        &__img {
+            width: 200px;
+        }
+    }
+    .footer {
+        min-height: 60vw;
+        margin: 0 7.5vw 0;
+        padding: 10vw 0vw 2.6vw;
+        &__img {
+            width: 15vw;
+            margin-bottom: 3vw;
+            &--globe {
+                display: none;
+            }
+            &--dropdown {
+                display: none;
+            }
+        }
+        &__select {
+            font-size: 0.7em;
+        }
+        &__a {
+            font-size: 0.7em;
+            padding: 0 4vw;
+        }
+        &__p {
+            font-size: 0.65em;
+        }
+    }
 }

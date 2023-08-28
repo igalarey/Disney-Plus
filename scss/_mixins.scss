@@ -5,21 +5,21 @@
     align-items: $align;
 }
 
-@mixin device($punto) {
-    @if ($punto == bigscreen) {
-        @media (min-width: 1201px) {
+@mixin device($tipo) {
+    @if ($tipo == bigscreen) {
+        @media (min-width: 1921px) {
             @content;
         }
-    } @else if ($punto == laptop) {
-        @media (max-width: 1200px) {
+    } @else if ($tipo == laptop) {
+        @media (max-width: 1024px) {
             @content;
         }
-    } @else if ($punto == tablet) {
-        @media (max-width: 950px) {
+    } @else if ($tipo == tablet) {
+        @media (max-width: 768px) {
             @content;
         }
-    } @else if ($punto == movil) {
-        @media (max-width: 560px) {
+    } @else if ($tipo == movil) {
+        @media (max-width: 479px) {
             @content;
         }
     }
