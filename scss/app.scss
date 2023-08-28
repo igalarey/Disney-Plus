@@ -23,7 +23,7 @@
 }
 
 @font-face {
-    font-family: "AvenirBlack";
+    font-family: var(--tipo-secundaria);
     src: url(assets/fonts/AvenirLTStd-Black.otf);
 }
 
@@ -92,7 +92,7 @@ body {
 .landing {
     @include flex(column, nowrap, center, center);
     min-height: 108vh;
-    background-image: url(assets/landing.jpg);
+    background-image: url("assets/landing.jpg");
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ body {
         text-align: center;
     }
     &__h1 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 2.7em;
         margin-bottom: 0.6em;
         line-height: 3.5vw;
@@ -154,7 +154,7 @@ body {
 .hero1 {
     @include flex(column, nowrap, center, start);
     min-height: 48vw;
-    background-image: url(assets/hero1.jpg);
+    background-image: url("assets/hero1.jpg");
     background-size: cover;
     background-position: top;
     &__texto {
@@ -163,7 +163,7 @@ body {
         padding-left: 5vw;
     }
     &__h1 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 2.65em;
         letter-spacing: 0.5px;
         margin-bottom: 3.1vw;
@@ -186,7 +186,7 @@ body {
     padding-top: 6.6vw;
     text-align: center;
     &__h1 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 2.65em;
         letter-spacing: 0.5px;
         margin-bottom: 3.4vw;
@@ -207,7 +207,7 @@ body {
         width: 56.252vw;
     }
     &__h3 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 1.7em;
         line-height: 2.5vw;
         letter-spacing: 0.5px;
@@ -224,7 +224,7 @@ body {
     padding: 8.9vw 5.6vw 5.6vw;
     &__h2 {
         text-align: center;
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 2.4em;
         margin-bottom: 3vw;
     }
@@ -274,7 +274,7 @@ body {
     padding: 5.6vw;
     text-align: center;
     &__h2 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 2.35em;
         letter-spacing: 0.5px;
         margin-bottom: 2.6vw;
@@ -283,7 +283,7 @@ body {
         @include flex(row, nowrap, center, start);
     }
     &__h3 {
-        font-family: "AvenirBlack";
+        font-family: var(--tipo-secundaria);
         font-size: 1.7em;
         letter-spacing: 0.5px;
         margin-top: 1.5vw;
@@ -459,7 +459,7 @@ option {
         min-height: 90vh;
         background-position: 50%;
         background-size: cover;
-        background-image: url(assets/landingMovil.jpg);
+        background-image: url("assets/landingMovil.jpg");
         &__h1 {
             font-size: 1.7em;
         }
@@ -549,7 +549,7 @@ option {
         min-height: 70vh;
         background-position: 50%;
         background-size: cover;
-        background-image: url(assets/landingMovil.jpg);
+        background-image: url("assets/landingMovil.jpg");
         &__texto {
             width: 89%;
         }
