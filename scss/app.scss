@@ -1,643 +1,643 @@
-@use "_mixins.scss" as *;
-@use "_reset.scss";
+@use '_mixins.scss' as *;
+@use '_reset.scss';
 
 @keyframes rebote {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-7px);
-    }
-    60% {
-        transform: translateY(-3.5px);
-    }
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-7px);
+	}
+	60% {
+		transform: translateY(-3.5px);
+	}
 }
 
 @font-face {
-    font-family: "Avenir";
-    src: url("/assets/fonts/AvenirLTStd-Roman.otf");
+	font-family: 'Avenir';
+	src: url('/assets/fonts/AvenirLTStd-Roman.otf');
 }
 
 @font-face {
-    font-family: "AvenirBlack";
-    src: url("/assets/fonts/AvenirLTStd-Black.otf");
+	font-family: 'AvenirBlack';
+	src: url('/assets/fonts/AvenirLTStd-Black.otf');
 }
 
 body {
-    font-weight: 400;
-    color: silver;
-    background-color: #040714;
+	font-weight: 400;
+	color: silver;
+	background-color: #040714;
 }
 
 .header {
-    @include flex(row, nowrap, space-between, center);
-    position: fixed;
-    width: 100%;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-    background-color: transparent;
-    &--sticky {
-        @include flex(row, nowrap, space-between, center);
-        position: fixed;
-        width: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease-out;
-        background-color: #040714;
-    }
-    &__ul {
-        @include flex(row, nowrap, center, center);
-        gap: 0.65vw;
-        padding: 0.7vw 2.7vw;
-    }
-    &__btn {
-        font-size: 1.15em;
-        white-space: nowrap;
-        padding: 0.8vw 1.15vw;
-        cursor: pointer;
-        letter-spacing: 0.5px;
-        border-radius: 4px;
-        transition: all 0.2s ease;
-        border: 1px solid silver;
-        color: #f9f9f9;
-        background-color: rgb(0, 0, 0, 0.8);
-        &:hover {
-            color: #040714;
-            background-color: #f9f9f9;
-        }
-        &--sub {
-            font-size: 1.15em;
-            white-space: nowrap;
-            padding: 0.9vw 1.05vw;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            color: #f9f9f9;
-            background-color: #0063e5;
-            &:hover {
-                background-color: #006eff;
-            }
-        }
-    }
-    &__img {
-        width: 5.3vw;
-        margin-left: 3.5vw;
-    }
+	@include flex(row, nowrap, space-between, center);
+	position: fixed;
+	width: 100%;
+	opacity: 1;
+	transition: opacity 0.5s ease-out;
+	background-color: transparent;
+	&--sticky {
+		@include flex(row, nowrap, space-between, center);
+		position: fixed;
+		width: 100%;
+		opacity: 0;
+		transition: opacity 0.5s ease-out;
+		background-color: #040714;
+	}
+	&__ul {
+		@include flex(row, nowrap, center, center);
+		gap: 0.65vw;
+		padding: 0.7vw 2.7vw;
+	}
+	&__btn {
+		font-size: 1.15em;
+		white-space: nowrap;
+		padding: 0.8vw 1.15vw;
+		cursor: pointer;
+		letter-spacing: 0.5px;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+		border: 1px solid silver;
+		color: #f9f9f9;
+		background-color: rgb(0, 0, 0, 0.8);
+		&:hover {
+			color: #040714;
+			background-color: #f9f9f9;
+		}
+		&--sub {
+			font-size: 1.15em;
+			white-space: nowrap;
+			padding: 0.9vw 1.05vw;
+			cursor: pointer;
+			letter-spacing: 0.5px;
+			border-radius: 4px;
+			transition: all 0.2s ease;
+			color: #f9f9f9;
+			background-color: #0063e5;
+			&:hover {
+				background-color: #006eff;
+			}
+		}
+	}
+	&__img {
+		width: 5.3vw;
+		margin-left: 3.5vw;
+	}
 }
 
 .landing {
-    @include flex(column, nowrap, center, center);
-    min-height: 108vh;
-    background-image: url("/assets/landing.jpg");
-    background-size: 100%;
-    background-position: top;
-    background-repeat: no-repeat;
-    &__texto {
-        @include flex(column, nowrap, start, center);
-        position: relative;
-        top: 8.3vw;
-        width: 65%;
-        text-align: center;
-    }
-    &__h1 {
-        font-family: var(--tipo-secundaria);
-        font-size: 2.7em;
-        margin-bottom: 0.6em;
-        line-height: 3.5vw;
-    }
-    &__h4 {
-        font-size: 1.5em;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.75vw;
-    }
-    &__btn {
-        font-size: 1.15em;
-        white-space: nowrap;
-        border-radius: 4px;
-        padding: 1em 6em;
-        letter-spacing: 0.5px;
-        margin-bottom: 2vw;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        color: #f9f9f9;
-        background-color: #0063e5;
-        &:hover {
-            background-color: #006eff;
-        }
-        &--bajar {
-            position: relative;
-            top: 11vw;
-            animation: rebote 1.75s infinite;
-        }
-    }
-    &__p {
-        font-size: 1.2em;
-        line-height: 1.875vw;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.1em;
-        color: inherit;
-    }
-    &__span {
-        font-size: 0.77em;
-        line-height: 1.2vw;
-        color: inherit;
-    }
-    &__img {
-        width: 1.3vw;
-    }
+	@include flex(column, nowrap, center, center);
+	min-height: 108vh;
+	background-image: url('/assets/landing.jpg');
+	background-size: 100%;
+	background-position: top;
+	background-repeat: no-repeat;
+	&__texto {
+		@include flex(column, nowrap, start, center);
+		position: relative;
+		top: 8.3vw;
+		width: 65%;
+		text-align: center;
+	}
+	&__h1 {
+		font-family: var(--tipo-secundaria);
+		font-size: 2.7em;
+		margin-bottom: 0.6em;
+		line-height: 3.5vw;
+	}
+	&__h4 {
+		font-size: 1.5em;
+		letter-spacing: 0.5px;
+		margin-bottom: 1.75vw;
+	}
+	&__btn {
+		font-size: 1.15em;
+		white-space: nowrap;
+		border-radius: 4px;
+		padding: 1em 6em;
+		letter-spacing: 0.5px;
+		margin-bottom: 2vw;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		color: #f9f9f9;
+		background-color: #0063e5;
+		&:hover {
+			background-color: #006eff;
+		}
+		&--bajar {
+			position: relative;
+			top: 11vw;
+			animation: rebote 1.75s infinite;
+		}
+	}
+	&__p {
+		font-size: 1.2em;
+		line-height: 1.875vw;
+		letter-spacing: 0.5px;
+		margin-bottom: 1.1em;
+		color: inherit;
+	}
+	&__span {
+		font-size: 0.77em;
+		line-height: 1.2vw;
+		color: inherit;
+	}
+	&__img {
+		width: 1.3vw;
+	}
 }
 
 .hero1 {
-    @include flex(column, nowrap, center, start);
-    min-height: 48vw;
-    background-image: url("/assets/hero1.jpg");
-    background-size: cover;
-    background-position: top;
-    &__texto {
-        min-height: 21.5vw;
-        width: 37vw;
-        padding-left: 5vw;
-    }
-    &__h1 {
-        font-family: var(--tipo-secundaria);
-        font-size: 2.65em;
-        letter-spacing: 0.5px;
-        margin-bottom: 3.1vw;
-    }
-    &__p {
-        font-size: 1.2em;
-        letter-spacing: 0.5px;
-        line-height: 2vw;
-        color: inherit;
-    }
-    &__img {
-        display: none;
-    }
+	@include flex(column, nowrap, center, start);
+	min-height: 48vw;
+	background-image: url('/assets/hero1.jpg');
+	background-size: cover;
+	background-position: top;
+	&__texto {
+		min-height: 21.5vw;
+		width: 37vw;
+		padding-left: 5vw;
+	}
+	&__h1 {
+		font-family: var(--tipo-secundaria);
+		font-size: 2.65em;
+		letter-spacing: 0.5px;
+		margin-bottom: 3.1vw;
+	}
+	&__p {
+		font-size: 1.2em;
+		letter-spacing: 0.5px;
+		line-height: 2vw;
+		color: inherit;
+	}
+	&__img {
+		display: none;
+	}
 }
 
 .hero2 {
-    @include flex(column, nowrap, center, center);
-    min-height: 48vw;
-    padding: 5.6vw;
-    padding-top: 6.6vw;
-    text-align: center;
-    &__h1 {
-        font-family: var(--tipo-secundaria);
-        font-size: 2.65em;
-        letter-spacing: 0.5px;
-        margin-bottom: 3.4vw;
-    }
-    &__p {
-        font-size: 1.2em;
-        margin-bottom: 1.4vw;
-        color: inherit;
-    }
+	@include flex(column, nowrap, center, center);
+	min-height: 48vw;
+	padding: 5.6vw;
+	padding-top: 6.6vw;
+	text-align: center;
+	&__h1 {
+		font-family: var(--tipo-secundaria);
+		font-size: 2.65em;
+		letter-spacing: 0.5px;
+		margin-bottom: 3.4vw;
+	}
+	&__p {
+		font-size: 1.2em;
+		margin-bottom: 1.4vw;
+		color: inherit;
+	}
 }
 
 .columna {
-    @include flex(row, nowrap, center, start);
-    gap: 2vw;
-    margin-top: 1.8vw;
-    &__img {
-        margin-bottom: 1.4vw;
-        width: 56.252vw;
-    }
-    &__h3 {
-        font-family: var(--tipo-secundaria);
-        font-size: 1.7em;
-        line-height: 2.5vw;
-        letter-spacing: 0.5px;
-        margin-bottom: 1.6vw;
-    }
-    &__p {
-        font-size: 1.25em;
-        line-height: 1.9vw;
-        color: inherit;
-    }
+	@include flex(row, nowrap, center, start);
+	gap: 2vw;
+	margin-top: 1.8vw;
+	&__img {
+		margin-bottom: 1.4vw;
+		width: 56.252vw;
+	}
+	&__h3 {
+		font-family: var(--tipo-secundaria);
+		font-size: 1.7em;
+		line-height: 2.5vw;
+		letter-spacing: 0.5px;
+		margin-bottom: 1.6vw;
+	}
+	&__p {
+		font-size: 1.25em;
+		line-height: 1.9vw;
+		color: inherit;
+	}
 }
 
 .faq {
-    padding: 8.9vw 5.6vw 5.6vw;
-    &__h2 {
-        text-align: center;
-        font-family: var(--tipo-secundaria);
-        font-size: 2.4em;
-        margin-bottom: 3vw;
-    }
-    &__pregunta {
-        margin-top: 1vw;
-    }
-    &__btn {
-        @include flex(row, nowrap, space-between, center);
-        cursor: pointer;
-        padding: 1vw 1.3vw;
-        width: 100%;
-        background-color: #13151d;
-    }
-    &__span {
-        font-size: 1.2em;
-        &--desplegable {
-            font-size: 2.5em;
-        }
-    }
-    &__descripcion {
-        padding: 0 1.3vw;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height, 0.25s ease-in-out;
-        background-color: #13151d;
-    }
-    &__p {
-        font-size: 1.2em;
-        line-height: 1.6em;
-        color: inherit;
-    }
-    &__li {
-        list-style-type: inherit;
-        margin: 1vw 2.5vw;
-    }
-    &__a {
-        text-decoration: underline;
-    }
+	padding: 8.9vw 5.6vw 5.6vw;
+	&__h2 {
+		text-align: center;
+		font-family: var(--tipo-secundaria);
+		font-size: 2.4em;
+		margin-bottom: 3vw;
+	}
+	&__pregunta {
+		margin-top: 1vw;
+	}
+	&__btn {
+		@include flex(row, nowrap, space-between, center);
+		cursor: pointer;
+		padding: 1vw 1.3vw;
+		width: 100%;
+		background-color: #13151d;
+	}
+	&__span {
+		font-size: 1.2em;
+		&--desplegable {
+			font-size: 2.5em;
+		}
+	}
+	&__descripcion {
+		padding: 0 1.3vw;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height, 0.25s ease-in-out;
+		background-color: #13151d;
+	}
+	&__p {
+		font-size: 1.2em;
+		line-height: 1.6em;
+		color: inherit;
+	}
+	&__li {
+		list-style-type: inherit;
+		margin: 1vw 2.5vw;
+	}
+	&__a {
+		text-decoration: underline;
+	}
 }
 
 .abierto {
-    padding: 0 1.3vw 1.3vw;
-    max-height: 1400px;
+	padding: 0 1.3vw 1.3vw;
+	max-height: 1400px;
 }
 
 .hero3 {
-    padding: 5.6vw;
-    text-align: center;
-    &__h2 {
-        font-family: var(--tipo-secundaria);
-        font-size: 2.35em;
-        letter-spacing: 0.5px;
-        margin-bottom: 2.6vw;
-    }
-    &__ul {
-        @include flex(row, nowrap, center, start);
-    }
-    &__h3 {
-        font-family: var(--tipo-secundaria);
-        font-size: 1.7em;
-        letter-spacing: 0.5px;
-        margin-top: 1.5vw;
-        margin-bottom: 1.8vw;
-    }
-    &__p {
-        font-size: 1.1em;
-        line-height: 1.8vw;
-        color: inherit;
-    }
+	padding: 5.6vw;
+	text-align: center;
+	&__h2 {
+		font-family: var(--tipo-secundaria);
+		font-size: 2.35em;
+		letter-spacing: 0.5px;
+		margin-bottom: 2.6vw;
+	}
+	&__ul {
+		@include flex(row, nowrap, center, start);
+	}
+	&__h3 {
+		font-family: var(--tipo-secundaria);
+		font-size: 1.7em;
+		letter-spacing: 0.5px;
+		margin-top: 1.5vw;
+		margin-bottom: 1.8vw;
+	}
+	&__p {
+		font-size: 1.1em;
+		line-height: 1.8vw;
+		color: inherit;
+	}
 }
 
 .footer {
-    @include flex(column, nowrap, start, center);
-    margin: 3.2vw 16.5vw 0;
-    padding: 1.7vw 6vw 2.6vw;
-    &__img {
-        width: 5vw;
-        margin-bottom: 0.9vw;
-        &--globe {
-            width: 1vw;
-            height: 1vw;
-        }
-        &--dropdown {
-            width: 0.8vw;
-        }
-    }
-    &__ul {
-        @include flex(row, wrap, center, center);
-        padding: 0 0.5vw;
-        margin-bottom: 1vw;
-    }
-    &__li {
-        display: flex;
-        align-items: center;
-    }
-    &__select {
-        font-size: 0.75em;
-        padding: 0.3vw 0.4vw;
-        color: inherit;
-        &:hover {
-            text-decoration: underline;
-            color: #f9f9f9;
-        }
-    }
-    &__a {
-        font-size: 0.75em;
-        padding: 0.3vw 0.8vw;
-        color: inherit;
-        &:hover {
-            color: #f9f9f9;
-        }
-    }
-    &__p {
-        font-size: 0.75em;
-        color: inherit;
-    }
+	@include flex(column, nowrap, start, center);
+	margin: 3.2vw 16.5vw 0;
+	padding: 1.7vw 6vw 2.6vw;
+	&__img {
+		width: 5vw;
+		margin-bottom: 0.9vw;
+		&--globe {
+			width: 1vw;
+			height: 1vw;
+		}
+		&--dropdown {
+			width: 0.8vw;
+		}
+	}
+	&__ul {
+		@include flex(row, wrap, center, center);
+		padding: 0 0.5vw;
+		margin-bottom: 1vw;
+	}
+	&__li {
+		display: flex;
+		align-items: center;
+	}
+	&__select {
+		font-size: 0.75em;
+		padding: 0.3vw 0.4vw;
+		color: inherit;
+		&:hover {
+			text-decoration: underline;
+			color: #f9f9f9;
+		}
+	}
+	&__a {
+		font-size: 0.75em;
+		padding: 0.3vw 0.8vw;
+		color: inherit;
+		&:hover {
+			color: #f9f9f9;
+		}
+	}
+	&__p {
+		font-size: 0.75em;
+		color: inherit;
+	}
 }
 
 option {
-    color: black;
+	color: black;
 }
 
 @include device(laptop) {
-    .header {
-        &__btn {
-            font-size: 1em;
-            padding: 1vw 1.15vw;
-            &--sub {
-                font-size: 1em;
-                padding: 1.15vw 1.05vw;
-            }
-        }
-        &__img {
-            width: 8vw;
-            margin-left: 6vw;
-        }
-    }
-    .landing {
-        min-height: 70vh;
-        &__h1 {
-            font-size: 1.7em;
-        }
-        &__h4 {
-            font-size: 1.2em;
-        }
-        &__btn {
-            font-size: 1em;
-            &--bajar {
-                top: 15vw;
-            }
-        }
-        &__p {
-            font-size: 1em;
-            line-height: 28px;
-        }
-        &__span {
-            line-height: 18px;
-        }
-    }
-    .hero1 {
-        @include flex(column, nowrap, start, start);
-        &__texto {
-            position: relative;
-            top: 9vw;
-            width: 45vw;
-        }
-        &__h1 {
-            font-size: 1.8em;
-        }
-        &__p {
-            font-size: 1em;
-            line-height: 28px;
-        }
-    }
-    .hero2 {
-        padding-top: 11vw;
-        &__h1 {
-            font-size: 1.8em;
-        }
-    }
-    .columna {
-        &__h3 {
-            font-size: 1.5em;
-            line-height: 35px;
-        }
-        &__p {
-            font-size: 1em;
-            line-height: 28px;
-        }
-    }
-    .faq {
-        padding: 20vw 5.6vw 5.6vw;
-        &__h2 {
-            font-size: 1.7em;
-        }
-        &__span {
-            font-size: 1em;
-        }
-        &__p {
-            font-size: 1em;
-        }
-    }
-    .hero3 {
-        padding: 15vw 5.6vw 5.6vw;
-        &__h2 {
-            font-size: 1.7em;
-        }
-        &__h3 {
-            font-size: 1.5em;
-        }
-        &__p {
-            font-size: 0.9em;
-            line-height: 28px;
-        }
-    }
-    .footer {
-        margin: 3.2vw 10.5vw 0;
-        padding: 10vw 0vw 2.6vw;
-        &__img {
-            width: 8vw;
-        }
-    }
+	.header {
+		&__btn {
+			font-size: 1em;
+			padding: 1vw 1.15vw;
+			&--sub {
+				font-size: 1em;
+				padding: 1.15vw 1.05vw;
+			}
+		}
+		&__img {
+			width: 8vw;
+			margin-left: 6vw;
+		}
+	}
+	.landing {
+		min-height: 70vh;
+		&__h1 {
+			font-size: 1.7em;
+		}
+		&__h4 {
+			font-size: 1.2em;
+		}
+		&__btn {
+			font-size: 1em;
+			&--bajar {
+				top: 15vw;
+			}
+		}
+		&__p {
+			font-size: 1em;
+			line-height: 28px;
+		}
+		&__span {
+			line-height: 18px;
+		}
+	}
+	.hero1 {
+		@include flex(column, nowrap, start, start);
+		&__texto {
+			position: relative;
+			top: 9vw;
+			width: 45vw;
+		}
+		&__h1 {
+			font-size: 1.8em;
+		}
+		&__p {
+			font-size: 1em;
+			line-height: 28px;
+		}
+	}
+	.hero2 {
+		padding-top: 11vw;
+		&__h1 {
+			font-size: 1.8em;
+		}
+	}
+	.columna {
+		&__h3 {
+			font-size: 1.5em;
+			line-height: 35px;
+		}
+		&__p {
+			font-size: 1em;
+			line-height: 28px;
+		}
+	}
+	.faq {
+		padding: 20vw 5.6vw 5.6vw;
+		&__h2 {
+			font-size: 1.7em;
+		}
+		&__span {
+			font-size: 1em;
+		}
+		&__p {
+			font-size: 1em;
+		}
+	}
+	.hero3 {
+		padding: 15vw 5.6vw 5.6vw;
+		&__h2 {
+			font-size: 1.7em;
+		}
+		&__h3 {
+			font-size: 1.5em;
+		}
+		&__p {
+			font-size: 0.9em;
+			line-height: 28px;
+		}
+	}
+	.footer {
+		margin: 3.2vw 10.5vw 0;
+		padding: 10vw 0vw 2.6vw;
+		&__img {
+			width: 8vw;
+		}
+	}
 }
 
 @include device(tablet) {
-    .header {
-        &__ul {
-            padding: 2vw 2.7vw;
-        }
-    }
-    .landing {
-        min-height: 90vh;
-        background-position: 50%;
-        background-size: cover;
-        background-image: url("/assets/landingMovil.jpg");
-        &__h1 {
-            font-size: 1.7em;
-        }
-        &__h4 {
-            font-size: 1.2em;
-        }
-        &__btn {
-            font-size: 1em;
-            &--bajar {
-                top: 25vw;
-            }
-        }
-        &__p {
-            font-size: 1em;
-            line-height: 28px;
-        }
-        &__span {
-            line-height: 18px;
-        }
-    }
-    .hero1 {
-        @include flex(column, nowrap, start, center);
-        background-image: none;
-        &__texto {
-            top: 0;
-            padding: 0;
-            text-align: center;
-            width: 90vw;
-        }
-        &__img {
-            display: inherit;
-        }
-    }
-    .hero2 {
-        padding-top: 25vw;
-        &__p {
-            margin-bottom: 10vw;
-        }
-    }
-    .columna {
-        @include flex(column, nowrap, start, center);
-        margin-top: 12vw;
-        &__img {
-            width: 100%;
-            height: 150px;
-            margin-bottom: 2vw;
-        }
-        &__p {
-            margin-bottom: 2vw;
-        }
-    }
-    .hero3 {
-        &__ul {
-            @include flex(row, wrap, center, start);
-        }
-        &__img {
-            width: 340px;
-        }
-    }
-    .footer {
-        min-height: 37vw;
-        margin: 0 7.5vw 0;
-        padding: 10vw 0vw 2.6vw;
-        &__img {
-            width: 8vw;
-        }
-    }
+	.header {
+		&__ul {
+			padding: 2vw 2.7vw;
+		}
+	}
+	.landing {
+		min-height: 90vh;
+		background-position: 50%;
+		background-size: cover;
+		background-image: url('/assets/landingMovil.jpg');
+		&__h1 {
+			font-size: 1.7em;
+		}
+		&__h4 {
+			font-size: 1.2em;
+		}
+		&__btn {
+			font-size: 1em;
+			&--bajar {
+				top: 25vw;
+			}
+		}
+		&__p {
+			font-size: 1em;
+			line-height: 28px;
+		}
+		&__span {
+			line-height: 18px;
+		}
+	}
+	.hero1 {
+		@include flex(column, nowrap, start, center);
+		background-image: none;
+		&__texto {
+			top: 0;
+			padding: 0;
+			text-align: center;
+			width: 90vw;
+		}
+		&__img {
+			display: inherit;
+		}
+	}
+	.hero2 {
+		padding-top: 25vw;
+		&__p {
+			margin-bottom: 10vw;
+		}
+	}
+	.columna {
+		@include flex(column, nowrap, start, center);
+		margin-top: 12vw;
+		&__img {
+			width: 100%;
+			height: 150px;
+			margin-bottom: 2vw;
+		}
+		&__p {
+			margin-bottom: 2vw;
+		}
+	}
+	.hero3 {
+		&__ul {
+			@include flex(row, wrap, center, start);
+		}
+		&__img {
+			width: 340px;
+		}
+	}
+	.footer {
+		min-height: 37vw;
+		margin: 0 7.5vw 0;
+		padding: 10vw 0vw 2.6vw;
+		&__img {
+			width: 8vw;
+		}
+	}
 }
 @include device(movil) {
-    .header {
-        &__ul {
-            gap: 2.7vw;
-        }
-        &__btn {
-            padding: 2.7vw 2.5vw;
-            font-size: 0.8em;
-            &--sub {
-                padding: 2.7vw 2.5vw;
-                font-size: 0.8em;
-            }
-        }
-        &__img {
-            width: 15vw;
-        }
-    }
-    .landing {
-        min-height: 70vh;
-        background-position: 50%;
-        background-size: cover;
-        background-image: url("/assets/landingMovil.jpg");
-        &__texto {
-            width: 89%;
-        }
-        &__h1 {
-            font-size: 1.5em;
-            line-height: 36px;
-        }
-        &__h4 {
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-        &__btn {
-            &--bajar {
-                display: none;
-            }
-        }
-        &__p {
-            font-size: 0.95em;
-            margin-top: 20px;
-            line-height: 28px;
-        }
-    }
-    .hero1 {
-        &__p {
-            margin: 8vw 0 10vw;
-        }
-    }
-    .hero2 {
-        &__p {
-            margin: 8vw 0 15vw;
-            font-size: 1em;
-        }
-    }
-    .columna {
-        &__img {
-            width: 100%;
-            height: 80px;
-            margin-bottom: 2vw;
-        }
-        &__p {
-            margin-bottom: 5vw;
-        }
-    }
-    .faq {
-        &__pregunta {
-            margin-top: 3vw;
-        }
-        &__btn {
-            padding: 3vw 4vw;
-        }
-        &__span {
-            font-size: 1em;
-        }
-        &__descripcion {
-            padding: 0 5vw;
-        }
-    }
-    .abierto {
-        padding-bottom: 3vw;
-    }
-    .hero3 {
-        &__img {
-            width: 200px;
-        }
-    }
-    .footer {
-        min-height: 60vw;
-        margin: 0 7.5vw 0;
-        padding: 10vw 0vw 2.6vw;
-        &__img {
-            width: 15vw;
-            margin-bottom: 3vw;
-            &--globe {
-                display: none;
-            }
-            &--dropdown {
-                display: none;
-            }
-        }
-        &__select {
-            font-size: 0.7em;
-        }
-        &__a {
-            font-size: 0.7em;
-            padding: 0 4vw;
-        }
-        &__p {
-            font-size: 0.65em;
-        }
-    }
+	.header {
+		&__ul {
+			gap: 2.7vw;
+		}
+		&__btn {
+			padding: 2.7vw 2.5vw;
+			font-size: 0.8em;
+			&--sub {
+				padding: 2.7vw 2.5vw;
+				font-size: 0.8em;
+			}
+		}
+		&__img {
+			width: 15vw;
+		}
+	}
+	.landing {
+		min-height: 70vh;
+		background-position: 50%;
+		background-size: cover;
+		background-image: url('/assets/landingMovil.jpg');
+		&__texto {
+			width: 89%;
+		}
+		&__h1 {
+			font-size: 1.5em;
+			line-height: 36px;
+		}
+		&__h4 {
+			font-size: 1em;
+			margin-bottom: 20px;
+		}
+		&__btn {
+			&--bajar {
+				display: none;
+			}
+		}
+		&__p {
+			font-size: 0.95em;
+			margin-top: 20px;
+			line-height: 28px;
+		}
+	}
+	.hero1 {
+		&__p {
+			margin: 8vw 0 10vw;
+		}
+	}
+	.hero2 {
+		&__p {
+			margin: 8vw 0 15vw;
+			font-size: 1em;
+		}
+	}
+	.columna {
+		&__img {
+			width: 100%;
+			height: 80px;
+			margin-bottom: 2vw;
+		}
+		&__p {
+			margin-bottom: 5vw;
+		}
+	}
+	.faq {
+		&__pregunta {
+			margin-top: 3vw;
+		}
+		&__btn {
+			padding: 3vw 4vw;
+		}
+		&__span {
+			font-size: 1em;
+		}
+		&__descripcion {
+			padding: 0 5vw;
+		}
+	}
+	.abierto {
+		padding-bottom: 3vw;
+	}
+	.hero3 {
+		&__img {
+			width: 200px;
+		}
+	}
+	.footer {
+		min-height: 60vw;
+		margin: 0 7.5vw 0;
+		padding: 10vw 0vw 2.6vw;
+		&__img {
+			width: 15vw;
+			margin-bottom: 3vw;
+			&--globe {
+				display: none;
+			}
+			&--dropdown {
+				display: none;
+			}
+		}
+		&__select {
+			font-size: 0.7em;
+		}
+		&__a {
+			font-size: 0.7em;
+			padding: 0 4vw;
+		}
+		&__p {
+			font-size: 0.65em;
+		}
+	}
 }
