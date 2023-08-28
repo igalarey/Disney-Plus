@@ -19,12 +19,12 @@
 
 @font-face {
     font-family: "Avenir";
-    src: url(assets/fonts/AvenirLTStd-Roman.otf);
+    src: url("/assets/fonts/AvenirLTStd-Roman.otf");
 }
 
 @font-face {
-    font-family: var(--tipo-secundaria);
-    src: url(assets/fonts/AvenirLTStd-Black.otf);
+    font-family: "AvenirBlack";
+    src: url("/assets/fonts/AvenirLTStd-Black.otf");
 }
 
 body {
@@ -92,7 +92,7 @@ body {
 .landing {
     @include flex(column, nowrap, center, center);
     min-height: 108vh;
-    background-image: url("assets/landing.jpg");
+    background-image: url("/assets/landing.jpg");
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
@@ -154,7 +154,7 @@ body {
 .hero1 {
     @include flex(column, nowrap, center, start);
     min-height: 48vw;
-    background-image: url("assets/hero1.jpg");
+    background-image: url("/assets/hero1.jpg");
     background-size: cover;
     background-position: top;
     &__texto {
@@ -459,7 +459,7 @@ option {
         min-height: 90vh;
         background-position: 50%;
         background-size: cover;
-        background-image: url("assets/landingMovil.jpg");
+        background-image: url("/assets/landingMovil.jpg");
         &__h1 {
             font-size: 1.7em;
         }
@@ -549,7 +549,7 @@ option {
         min-height: 70vh;
         background-position: 50%;
         background-size: cover;
-        background-image: url("assets/landingMovil.jpg");
+        background-image: url("/assets/landingMovil.jpg");
         &__texto {
             width: 89%;
         }

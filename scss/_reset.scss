@@ -3,7 +3,7 @@
 :root {
     --negro: #202020;
     --tipo-principal: "Avenir", Arial, sans-serif;
-    --tipo-secundaria: "AvenirBlack";
+    --tipo-secundaria: "AvenirBlack", Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
