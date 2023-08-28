@@ -5,7 +5,7 @@
 
 ## 🔴 En vivo
 
-[Pulsa aquí](https://igalarey.github.io/Disney-Plus/)
+[Pulsa aquí](https://disney-plus-ten-blue.vercel.app/)
 
 ## 📋 Descripción
 
