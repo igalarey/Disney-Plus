@@ -10,18 +10,10 @@
 ## 📋 Descripción
 
 Copycat de la web de Disney+ en español.
-## 📚 Aprendizaje
-
-Este proyecto me ha servido para aprender sobre como grandes empresas del sector organizan su código.
-
 
 ## 💻 Tecnologías
 
 [![Tecnologías](https://skillicons.dev/icons?i=html,sass,css,js)]()
-## 🖋️ Autores
-
-- [@igalarey](https://www.github.com/igalarey)
-
 
 ## 📑 Licencia
 
